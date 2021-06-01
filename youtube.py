@@ -60,7 +60,7 @@ def playlist(id,searchTerm):
                 seconds = int(line['start'])%60
                 x=f"{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\""
                 result.append(x)
-                print(f"{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
+             #   print(f"{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
     youtube_service.close()
     return result
 
@@ -85,7 +85,7 @@ def video(id,searchTerm):
                 minutes = (int(line['start'])//60)%60
                 seconds = int(line['start'])%60
                 temp = f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n"
-                print(f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n")
+             #   print(f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n")
                 result.append(temp)
                 count += 1
     if count == 0 : print("No matches found :(\n")

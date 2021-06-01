@@ -13,8 +13,10 @@ def student():
 def result():
    if request.method == 'POST':
       result = request.form
-      temp = youtube.main("https://www.youtube.com/watch?v=WPjsDVS_trI", "hi")
-      return render_template("ui.html",result = result, temp=temp)
+      print(result['url'])
+      print(result['word'])
+      temp = youtube.main(result['url'], result['word'])
+      return render_template("ui.html", temp=temp)
 
 
 if __name__ == 'main':
