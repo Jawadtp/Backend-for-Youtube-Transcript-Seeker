@@ -9,6 +9,11 @@ import re
 from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def playlist(id,searchTerm):
 
     result=[]
@@ -68,7 +73,7 @@ def video(id,searchTerm):
     
     count = 0
     result=[]
-    api_key = 'AIzaSyAHHa0_Bdkydw53FaUj5jG5oKQVkkCa_m8'
+    api_key = os.getenv('API_KEY')
     youtube_service = build('youtube','v3',developerKey = api_key)
     videoNameRequest = youtube_service.videos().list(
     part="snippet,contentDetails",id=id)
