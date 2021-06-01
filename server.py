@@ -1,4 +1,5 @@
-import youtube
+import yoogle
+
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ def result():
       result = request.form
       print(result['url'])
       print(result['word'])
-      temp = youtube.main(result['url'], result['word'])
+      temp = yoogle.main(result['url'], result['word'])
+      print(temp)
       return render_template("ui.html", temp=temp)
 
 
