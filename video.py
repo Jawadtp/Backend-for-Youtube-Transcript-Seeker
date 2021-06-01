@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-result = []
 
 def search_video_1(id,searchTerm):
+    result=[]
     count = 0
     api_key = os.getenv('API_KEY')
     youtube_service = build('youtube','v3',developerKey = api_key)
@@ -21,7 +21,7 @@ def search_video_1(id,searchTerm):
         print("Invalid video ID")
         result.append("\nInvalid Video ID")
         youtube_service.close()
-        return
+        return result
     
 
     title = videoDetails['items'][0]['snippet']['title']
@@ -33,21 +33,21 @@ def search_video_1(id,searchTerm):
         print("Transcripts are disabled for this video")
         result.append("Transcripts are disabled for this video")
         youtube_service.close()
-        return
+        return result
 
     for line  in transcript:
             if(searchTerm.lower() in line['text'].lower()):
                 hours = int(line['start'])//(60*60)
                 minutes = (int(line['start'])//60)%60
                 seconds = int(line['start'])%60
-                print(f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n")
+           #     print(f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n")
                 result.append(f"({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"\n")
                 count += 1
     if count == 0 : 
         print("No matches found :(")
         result.append("No matches found :(")
     youtube_service.close()
-
+    return result
    
 
 
@@ -60,10 +60,11 @@ def loadingAnimation(process) :
             
 
 def search_video(id,searchTerm):
+    '''
     loading_process = threading.Thread(target=search_video_1, args=(id,searchTerm))
     loading_process.start()
 
     loadingAnimation(loading_process)
     loading_process.join()
-    
-    return result
+    '''
+    return search_video_1(id,searchTerm)

@@ -7,10 +7,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-result = []
+
 
 def search_playlist_1(id,searchTerm):
-
+    result=[]
     api_key = os.getenv('API_KEY')
     nextPageToken = None
     youtube_service = build('youtube','v3',developerKey = api_key)
@@ -35,7 +35,7 @@ def search_playlist_1(id,searchTerm):
 
             if ('error' in videoDetails.keys() or len(videoDetails.get('items')) == 0 ):
                 youtube_service.close()
-                return
+                return result
             videoName = videoDetails['items'][0]['snippet']['title']
             try:
                 transcripts[videoName] = YouTubeTranscriptApi.get_transcript(item['contentDetails']['videoId'])
@@ -55,7 +55,7 @@ def search_playlist_1(id,searchTerm):
                 hours = int(line['start'])//(60*60)
                 minutes = (int(line['start'])//60)%60
                 seconds = int(line['start'])%60
-                print(f"\n{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
+             #   print(f"\n{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
                 result.append(f"\n{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
                 count += 1
 
@@ -74,10 +74,5 @@ def loadingAnimation(process) :
             time.sleep(.1)
 
 def search_playlist(id,searchTerm):
-    loading_process = threading.Thread(target=search_playlist_1, args=(id,searchTerm))
-    loading_process.start()
-
-    loadingAnimation(loading_process)
-    loading_process.join()
-    
-    return result
+        
+    return search_playlist_1(id, searchTerm)

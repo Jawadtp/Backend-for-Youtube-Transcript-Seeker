@@ -16,10 +16,13 @@ def result():
       result = request.form
       print(result['url'])
       print(result['word'])
+      temp=[]
       temp = yoogle.main(result['url'], result['word'])
       print(temp)
-      return render_template("ui.html", temp=temp)
+      return render_template("ui.html", temp=temp, url=result['url'], word=result['word'])
 
 
 if __name__ == 'main':
-   app.run(debug = True)
+   app.run(debug = False)
+
+   
