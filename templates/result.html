@@ -1,11 +1,9 @@
 <!doctype html>
-  <table border = 1>
-    {% for key, value in result.items() %}
+  
+    {% for sentence in temp %}
 
-    <tr>
-       <th> {{ key }} </th>
-       <td> {{ value }} </td>
-    </tr>
+     <div> <p>{{ sentence }} </p></div>
+     
 
     {% endfor %}
- </table>
+ 

@@ -11,6 +11,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 def playlist(id,searchTerm):
 
+    result=[]
     api_key = 'YOUR-API-KEY-HERE'
     nextPageToken = None
     youtube_service = build('youtube','v3',developerKey = api_key)
@@ -57,9 +58,11 @@ def playlist(id,searchTerm):
                 hours = int(line['start'])//(60*60)
                 minutes = (int(line['start'])//60)%60
                 seconds = int(line['start'])%60
+                x=f"{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\""
+                result.append(x)
                 print(f"{title}\n({hours}:{minutes}:{seconds})-> \"...{line['text']}...\"")
     youtube_service.close()
-
+    return result
 
 def video(id,searchTerm):
     
@@ -114,15 +117,16 @@ def main(url,searchTerm = None):
         print("Invalid URL")
         return None
     if n == 1:
-        playlist(extracted_id,searchTerm, result)
+        result=playlist(extracted_id,searchTerm)
     else:
-        result=video(extracted_id,searchTerm, result)
+        result=video(extracted_id,searchTerm)
     return result
 
+'''
 url = input("Paste the url: ")
 searchTerm = input("Word/Sentence to be searched: ")
 main(url,searchTerm)    
-
+'''
 
 
 
