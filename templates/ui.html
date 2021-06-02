@@ -7,32 +7,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <title>Youtube Transcript Search</title>
+  <title>Youtube Transcript Search</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark">Yoogle</nav>
     <div class="container mainWrapper">
     <div class="form-wrapper">
-        <h1><p>Welcome to <span style="font-weight: bold; color:tomato;">Yoogle!</span></p></h1>
+        <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
         
-
         <form action = "/" method = "POST">
             <div class="form-group" style="padding-top: 10px;">
             <label for="url" style="font-weight: bold;">YouTube URL</label>
             <input type="text" name="url" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Link to the YouTube video/playlist" value={{url}}>
             </div>
             
-            <div class="form-group" style="padding-top: 10px;">
+            <div class="" style="padding-top: 10px;">
             <label for="url" style="font-weight: bold;">Search term</label>
             <input type="text" name="word" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="button">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
         <br>
     </div>
     <br>
    {% if temp is defined and temp[0] is defined %} 
-   <div class="result-wrapper" style="background-color: lightblue;">
+   <div class="result-wrapper">
 
         {% for sentence in temp %}
 
