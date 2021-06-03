@@ -23,12 +23,16 @@
             
             <div class="" style="padding-top: 10px;">
             <label for="url" style="font-weight: bold;">Search term</label>
-            <input type="text" name="word" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
+            <input type="text" name="word" class="form-control" id="word" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
             </div>
             <br>
+           
+            <br>
             <div class="button">
+                <button type="button" onclick="clearTextfield()" class="btn btn-primary clearBtn">Clear</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
+
         </form>
         <br>
     </div>
@@ -46,6 +50,13 @@
     </div>
     {% endif %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+    <script>
+        function clearTextfield()
+        {
+            console.log('Clearing textfields..')
+            document.getElementById("url").value=""
+            document.getElementById("word").value=""
+        }
+    </script>
 </body>
 </html>
