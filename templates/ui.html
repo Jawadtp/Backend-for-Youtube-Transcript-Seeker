@@ -19,22 +19,25 @@
         <div class="form-wrapper">
             <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
         
-            <form action = "/" method = "POST">
-                <div class="form-group" style="padding-top: 10px;">
-                    <label for="url" style="font-weight: bold;">YouTube URL</label>
-                    <input type="text" name="url" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Link to the YouTube video/playlist" value={{url}}>
-                </div>
-                
-                <div class="" style="padding-top: 10px;">
-                    <label for="url" style="font-weight: bold;">Search term</label>
-                    <input type="text" name="word" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
-                </div>
+        <form action = "/" method = "POST">
+            <div class="form-group" style="padding-top: 10px;">
+            <label for="url" style="font-weight: bold;">YouTube URL</label>
+            <input type="text" name="url" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Link to the YouTube video/playlist" value={{url}}>
+            </div>
+            
+            <div class="" style="padding-top: 10px;">
+            <label for="url" style="font-weight: bold;">Search term</label>
+            <input type="text" name="word" class="form-control" id="word" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
+            </div>
             <br>
-            </form>
+           
+            <br>
             <div class="button">
+                <button type="button" onclick="clearTextfield()" class="btn btn-primary clearBtn">Clear</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </div>
+
+        </form>
         <br>
     </div>
     <br>
@@ -55,6 +58,13 @@
         <a href="https://github.com/Jawadtp/Backend-for-Youtube-Transcript-Seeker/issues"><p style="display: inline;">Report a bug</p></a>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+    <script>
+        function clearTextfield()
+        {
+            console.log('Clearing textfields..')
+            document.getElementById("url").value=""
+            document.getElementById("word").value=""
+        }
+    </script>
 </body>
 </html>
