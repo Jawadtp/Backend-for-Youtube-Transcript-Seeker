@@ -66,9 +66,7 @@ footer{
     
     color: #4f95e4;
     text-align: center;
-    padding: 40px;
-    position: absolute;
-    bottom: 0;
+    padding: 40px;    
     width: 100%;
 }
 
@@ -81,6 +79,7 @@ footer{
     margin:0 30px;
     width: 30px;
 }
+
 label{
     color: aliceblue;
 }
