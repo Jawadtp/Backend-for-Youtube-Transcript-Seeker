@@ -2,9 +2,9 @@ from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 
 def search_video(id, searchTerm):
