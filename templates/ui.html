@@ -46,7 +46,7 @@
         {% for title, id in temp['titles'] %}
             <div> <a href="https://youtube.com/watch?v={{id}}"> {{ title }} </a> </div>
             {% for time in temp[title].keys() %}
-                <div> <a href="https://youtube.com/watch?v={{id}}&t={{time}}"> {{ temp[title][time][0] }} </a> {{ temp[title][time][0] }} </div>
+                <div> <a href="https://youtube.com/watch?v={{id}}&t={{time}}"> {{ temp[title][time][0] }} </a> {{ temp[title][time][1] }} </div>
             {% endfor %}
         {% endfor %}
     </div>
