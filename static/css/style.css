@@ -9,6 +9,7 @@ body
     color: #4f95e4;
     animation: slide ease .7s;
     font-size: 1.5rem;
+    font-weight: bold;
     padding: 20px;
 }
 
@@ -61,6 +62,24 @@ input[type=text]:focus{
     border-radius: 6px;
 }
 
+footer{
+    
+    color: #4f95e4;
+    text-align: center;
+    padding: 40px;    
+    width: 100%;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    
+}
+
+.icon{
+    margin:0 30px;
+    width: 30px;
+}
+
 label{
     color: aliceblue;
 }
@@ -68,6 +87,18 @@ label{
 h1
 {
     margin: auto;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+}
+
+a{
+    color: #4f95e4;
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 .form-control{
