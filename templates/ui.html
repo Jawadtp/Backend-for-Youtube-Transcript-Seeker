@@ -37,16 +37,18 @@
         <br>
     </div>
     <br>
-   {% if temp is defined and temp[0] is defined %} 
+   {% if temp is defined and temp != None%} 
    <div class="result-wrapper">
 
-        {% for sentence in temp %}
-
-        <div> {{ sentence }} </div>
-        
-
+        {% for sentence in temp['messages'] %}
+            <div> {{ sentence }} </div>
         {% endfor %}
-        </div>
+        {% for title, id in temp['titles'] %}
+            <div> <a href="https://youtube.com/watch?v={{id}}"> {{ title }} </a> </div>
+            {% for time in temp[title].keys() %}
+                <div> <a href="https://youtube.com/watch?v={{id}}&t={{time}}"> {{ temp[title][time][0] }} </a> {{ temp[title][time][0] }} </div>
+            {% endfor %}
+        {% endfor %}
     </div>
     {% endif %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
