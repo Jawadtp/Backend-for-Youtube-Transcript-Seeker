@@ -1,11 +1,10 @@
-import threading, time
 from googleapiclient.discovery import build
 from youtube_transcript_api import YouTubeTranscriptApi
 
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 
 def search_video(id, searchTerm):
@@ -48,11 +47,3 @@ def search_video(id, searchTerm):
         result['messages'].append("No matches found :(")
     youtube_service.close()
     return result
-
-
-def loadingAnimation(process) :
-    while process.is_alive():
-        chars = "/—\|"
-        for char in chars:
-            print('Fetching Transcripts '+char, end='\r', flush=True)
-            time.sleep(.1)
