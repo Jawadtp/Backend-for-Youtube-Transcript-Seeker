@@ -41,7 +41,7 @@ def search_video(id, searchTerm):
             hours = time//(60*60)
             minutes = (time//60)%60
             seconds = time%60
-            result[title][str(time)] = (f"({hours:02d}:{minutes:02d}:{seconds:02d})", "-> \"...{line['text']}...\"\n")
+            result[title][str(time)] = (f"({hours:02d}:{minutes:02d}:{seconds:02d})", f"-> \"...{line['text']}...\"\n")
             count += 1
     if count == 0 :
         result['messages'].append("No matches found :(")
