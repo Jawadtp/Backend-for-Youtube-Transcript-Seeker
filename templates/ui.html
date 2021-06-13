@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <title>Youtube Transcript Search</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/youtube_blue.png') }}">
 </head>
 <body>
     <nav class="navbar navbar-dark">Yoogle</nav>
     <div class="container mainWrapper">
-    <div class="form-wrapper">
-        <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
+        <div class="form-wrapper">
+            <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
         
         <form action = "/" method = "POST">
             <div class="form-group" style="padding-top: 10px;">
@@ -51,6 +55,12 @@
         {% endfor %}
     </div>
     {% endif %}
+    </div>
+    <footer>
+        <a href="https://github.com/Jawadtp/Backend-for-Youtube-Transcript-Seeker"><p style="display: inline;">Contribute </p></a>
+        <a href="https://github.com/Jawadtp/Backend-for-Youtube-Transcript-Seeker"><img src="../static/images/github.png" alt="github" class="icon"></a>
+        <a href="https://github.com/Jawadtp/Backend-for-Youtube-Transcript-Seeker/issues"><p style="display: inline;">Report a bug</p></a>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script>
         function clearTextfield()
