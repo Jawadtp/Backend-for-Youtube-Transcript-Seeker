@@ -14,7 +14,17 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/youtube_blue.png') }}">
 </head>
 <body>
-    <nav class="navbar navbar-dark">Yoogle</nav>
+    <nav class="navbar navbar-dark">
+        Yoogle
+
+        <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <div class="nextTheme">Dark Mode</span>
+        </div>
+    </nav>
     <div class="container mainWrapper">
         <div class="form-wrapper">
             <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
@@ -63,12 +73,33 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script>
+
         function clearTextfield()
         {
             console.log('Clearing textfields..')
             document.getElementById("url").value=""
             document.getElementById("word").value=""
         }
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function changeTheme(e) 
+        {
+            if (e.target.checked) 
+            {
+                document.documentElement.setAttribute('theme', 'light');
+                document.getElementsByClassName("nextTheme")[0].innerHTML="Light Mode";
+
+            }
+            else 
+            {
+                document.documentElement.setAttribute('theme', 'dark');
+                document.getElementsByClassName("nextTheme")[0].innerHTML="Dark Mode";
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', changeTheme, false);
+
     </script>
 </body>
 </html>
