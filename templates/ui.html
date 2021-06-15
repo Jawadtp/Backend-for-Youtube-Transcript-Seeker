@@ -82,6 +82,7 @@
             document.getElementById("checkbox").checked = true
             document.documentElement.setAttribute('theme', 'light');
             document.getElementsByClassName("nextTheme")[0].innerHTML="Light Mode";
+            document.getElementsByClassName("icon")[0].setAttribute("src","../static/images/github_blue.png");
         } 
 
         function clearTextfield()
@@ -100,10 +101,12 @@
                 document.documentElement.setAttribute('theme', 'light');
                 document.getElementsByClassName("nextTheme")[0].innerHTML="Light Mode";
                 localStorage.setItem('theme','light')
+                document.getElementsByClassName("icon")[0].setAttribute("src","../static/images/github_blue.png");
             }
             else 
             {
                 document.documentElement.setAttribute('theme', 'dark');
+                document.getElementsByClassName("icon")[0].setAttribute("src","../static/images/github.png");
                 document.getElementsByClassName("nextTheme")[0].innerHTML="Dark Mode";
                 localStorage.setItem('theme','dark')
             }    

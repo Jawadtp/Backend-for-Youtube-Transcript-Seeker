@@ -20,15 +20,17 @@
 [theme="light"] 
 {
     --current-mode-text-color: black;/* Color of the label 'Light Mode' */
-     --navbar-color: black; 
-    --background-color: wheat;
+    --navbar-color:#4f95e4;/* rgba(0, 0, 0, 0.6); */
+    --label-color: black;
+    --background-color: white;
     --navbar-dark-background-color: whitesmoke;
-    --input-type-text-color: yellow;
-    --form-wrapper-background: green;
-    --result-wrapper-background: violet;
-    --result-wrapper-color: indigo;
-
-
+    --input-type-text-color: black;
+    --form-wrapper-background: whitesmoke;
+    --result-wrapper-background: whitesmoke;
+    --result-wrapper-color: black;
+    --form-control-background: white;
+    --input-type-text-focus: white;
+    --form-color: black;
 }
 
 body
@@ -67,7 +69,7 @@ input[type=text]
 }
 
 input[type=text]:focus{
-    color: white;
+    color: black;
     background-color: var(--input-type-text-focus); 
 }
 
@@ -224,7 +226,7 @@ input:-webkit-autofill
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: #4f95e4;
 }
 
 input:checked + .slider:before {
