@@ -101,6 +101,12 @@ footer{
     width: 100%;
 }
 
+.fa{
+    top: 5px;
+    position: relative;
+    padding: 0 10px 0 10px;
+}
+
 .icon:hover{
     transform: scale(1.1);
     
