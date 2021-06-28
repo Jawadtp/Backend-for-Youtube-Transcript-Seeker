@@ -26,6 +26,8 @@
         <div class="nextTheme">Dark Mode</span>
         </div>
     </nav>
+    {% block body%}
+
     <div class="container mainWrapper">
         <div class="form-wrapper">
             <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
@@ -51,6 +53,8 @@
         </form>
         <br>
     </div>
+    {% endblock %}
+
     <br>
    {% if temp is defined and temp != None%} 
    <div class="result-wrapper">
