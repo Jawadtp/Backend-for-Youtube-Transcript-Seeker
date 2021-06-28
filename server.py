@@ -15,5 +15,8 @@ def result():
       temp = yoogle.main(result['url'], result['word'])
       return render_template("ui.html", temp=temp, url=result['url'], word=result['word'])
 
+@app.route("/about")
+def about():
+   return render_template("about.html")
 if __name__=="__main__":
    app.run(debug = False)
