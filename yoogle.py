@@ -10,7 +10,7 @@ def parse(url):
     elif 'v=' in url:
         # parse for videoID
         if '&' in url:
-            return url[url.find('v=')+2 : url.find('&')+1], 0
+            return url[url.find('v=')+2 : url.find('&')], 0
         else:
             return url[url.find('v=')+2:], 0
     elif '.be' in url:
