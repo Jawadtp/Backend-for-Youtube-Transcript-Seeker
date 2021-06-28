@@ -19,7 +19,6 @@ def parse(url):
         return None, None
 
 def main(url,searchTerm = None):
-    print('\n################ Yoogle ###################')
     extracted_id, n = parse(url)
     if not extracted_id:
         return {'messages':  ['Invalid URL']}

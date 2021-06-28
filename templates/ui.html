@@ -31,19 +31,19 @@
     <div class="container mainWrapper">
         <div class="form-wrapper">
             <!-- <h1><p><span style="font-weight: bold; color:#58a6ff;">Yoogle</span></p></h1> -->
-        
+
         <form action = "/" method = "POST">
             <div class="form-group" style="padding-top: 10px;">
             <label for="url" style="font-weight: bold;">YouTube URL</label>
             <input type="text" name="url" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Link to the YouTube video/playlist" value={{url}}>
             </div>
-            
+
             <div class="" style="padding-top: 10px;">
             <label for="url" style="font-weight: bold;">Search term</label>
             <input type="text" name="word" class="form-control" id="word" aria-describedby="emailHelp" placeholder="Keyword or sentence to search for" value={{word}}>
             </div>
             <br>
-           
+
             <br>
             <div class="button">
                 <button type="button" onclick="clearTextfield()" class="btn btn-primary clearBtn">Clear</button>
@@ -56,7 +56,7 @@
     {% endblock %}
 
     <br>
-   {% if temp is defined and temp != None%} 
+   {% if temp is defined and temp != None%}
    <div class="result-wrapper">
 
         {% for sentence in temp['messages'] %}
@@ -81,14 +81,14 @@
     <script>
 
         let theme = localStorage.getItem("theme")
-        
+
         if(theme && theme==='light')
         {
             console.log('Light theme')
             document.getElementById("checkbox").checked = true
             document.documentElement.setAttribute('theme', 'light');
             document.getElementsByClassName("nextTheme")[0].innerHTML="Light Mode";
-        } 
+        }
 
         function clearTextfield()
         {
@@ -99,20 +99,20 @@
 
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-        function changeTheme(e) 
+        function changeTheme(e)
         {
-            if (e.target.checked) 
+            if (e.target.checked)
             {
                 document.documentElement.setAttribute('theme', 'light');
                 document.getElementsByClassName("nextTheme")[0].innerHTML="Light Mode";
                 localStorage.setItem('theme','light')
             }
-            else 
+            else
             {
                 document.documentElement.setAttribute('theme', 'dark');
                 document.getElementsByClassName("nextTheme")[0].innerHTML="Dark Mode";
                 localStorage.setItem('theme','dark')
-            }    
+            }
         }
 
         toggleSwitch.addEventListener('change', changeTheme, false);
