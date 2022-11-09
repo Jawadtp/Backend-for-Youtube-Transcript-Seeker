@@ -99,6 +99,8 @@ input[type=text]:focus{
     background-color: var(--result-wrapper-background);
     border: 1px solid var(--result-wrapper-border);
     border-radius: 6px;
+    max-height: 225px;
+    overflow-y: scroll;
 }
 
 footer{
